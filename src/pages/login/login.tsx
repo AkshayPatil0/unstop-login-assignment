@@ -21,6 +21,10 @@ export default function Login() {
     }
   }, [navigate]);
 
+  useEffect(() => {
+    document.title = "Login | Unstop";
+  }, []);
+
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-2 p-4 md:p-12 xl:p-16 items-center place-items-center gap-12">
       <div className="size-64 md:size-96 lg:w-full lg:h-fit lg:pr-12 xl:pr-36">

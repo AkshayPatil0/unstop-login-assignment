@@ -1,5 +1,6 @@
 import profileImg from "@/assets/profile.jpeg";
 import { getLoginData } from "@/lib/auth";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
@@ -11,6 +12,10 @@ export default function Home() {
     localStorage.removeItem("auth");
     navigate("/auth/login");
   };
+
+  useEffect(() => {
+    document.title = "Home | Unstop";
+  }, []);
 
   if (!loginData) return null;
 
