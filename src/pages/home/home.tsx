@@ -7,15 +7,12 @@ export default function Home() {
 
   const loginData = getLoginData();
 
-  if (!loginData) {
-    navigate("/auth/login");
-    return null;
-  }
-
   const onLogout = () => {
     localStorage.removeItem("auth");
     navigate("/auth/login");
   };
+
+  if (!loginData) return null;
 
   return (
     <div className="w-full h-screen flex flex-col gap-24 items-center justify-center">
